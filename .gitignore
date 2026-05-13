@@ -1,0 +1,4 @@
+.DS_Store
+.codex-*.png
+data/rate_*.txt
+*.log

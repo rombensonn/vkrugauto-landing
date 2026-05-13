@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 720" role="img" aria-labelledby="title desc">
+  <title id="title">Схема оклейки автомобиля пленкой</title>
+  <desc id="desc">Минималистичный автомобиль, защитная пленка и линии контроля качества для лендинга Вкругавто.</desc>
+  <defs>
+    <linearGradient id="body" x1="160" y1="230" x2="830" y2="510" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".52" stop-color="#eef5f8"/>
+      <stop offset="1" stop-color="#dbe8ee"/>
+    </linearGradient>
+    <linearGradient id="film" x1="610" y1="120" x2="820" y2="570" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".86"/>
+      <stop offset=".58" stop-color="#d9f0f7" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="120%" height="130%">
+      <feDropShadow dx="0" dy="26" stdDeviation="28" flood-color="#132238" flood-opacity=".16"/>
+    </filter>
+  </defs>
+
+  <rect x="636" y="86" width="174" height="488" rx="44" fill="url(#film)" stroke="#9ac0cf" stroke-width="2"/>
+  <path d="M670 124c48 92 54 192 8 300M742 112c38 120 40 258-4 414" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity=".52"/>
+  <path d="M706 132h68M690 478h78" fill="none" stroke="#f3c316" stroke-width="10" stroke-linecap="round" opacity=".86"/>
+
+  <g filter="url(#shadow)">
+    <path d="M118 459c16-71 54-128 116-171 50-35 118-54 204-54h104c77 0 137 17 181 50 49 37 78 91 88 162l5 35H112l6-22Z" fill="url(#body)" stroke="#132238" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M232 286c34-76 93-114 176-114h76c84 0 144 37 181 112l38 78H190l42-76Z" fill="#ffffff" stroke="#132238" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M306 285c27-44 66-66 116-66h52c53 0 94 22 123 66l24 38H282l24-38Z" fill="#e7f0f4" stroke="#24496f" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M192 419h88M704 419h88" fill="none" stroke="#f3c316" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="260" cy="483" r="58" fill="#132238"/>
+    <circle cx="260" cy="483" r="27" fill="#ffffff"/>
+    <circle cx="260" cy="483" r="10" fill="#24496f"/>
+    <circle cx="668" cy="483" r="58" fill="#132238"/>
+    <circle cx="668" cy="483" r="27" fill="#ffffff"/>
+    <circle cx="668" cy="483" r="10" fill="#24496f"/>
+  </g>
+
+  <path d="M148 553h676" fill="none" stroke="#132238" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+  <path d="M122 160c90-34 161-43 232-32M774 180c49 16 87 44 112 84M94 358c44-22 86-32 126-30" fill="none" stroke="#24496f" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+  <path d="M132 132h62M812 296h78M746 616h96" fill="none" stroke="#f3c316" stroke-width="9" stroke-linecap="round" opacity=".82"/>
+</svg>
