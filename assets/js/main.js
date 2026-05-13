@@ -8,6 +8,8 @@
     var leadForm = document.getElementById('leadForm');
     var formStatus = document.getElementById('formStatus');
     var mapNode = document.querySelector('[data-map]');
+    var workCards = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-src]'));
+    var lightbox = document.querySelector('[data-lightbox]');
 
     if (menuButton && mobileNav) {
         menuButton.addEventListener('click', function () {
@@ -100,6 +102,96 @@
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var dd = String(today.getDate()).padStart(2, '0');
         dateInput.min = yyyy + '-' + mm + '-' + dd;
+    }
+
+    if (workCards.length && lightbox) {
+        var lightboxImage = lightbox.querySelector('[data-lightbox-image]');
+        var lightboxCaption = lightbox.querySelector('[data-lightbox-caption]');
+        var closeButtons = lightbox.querySelectorAll('[data-lightbox-close]');
+        var prevButton = lightbox.querySelector('[data-lightbox-prev]');
+        var nextButton = lightbox.querySelector('[data-lightbox-next]');
+        var activeWorkIndex = 0;
+        var lastLightboxTrigger = null;
+
+        function setLightboxImage(index) {
+            var nextIndex = (index + workCards.length) % workCards.length;
+            var card = workCards[nextIndex];
+            var src = card.dataset.lightboxSrc;
+            var title = card.dataset.lightboxTitle || '';
+            var alt = card.dataset.lightboxAlt || title;
+
+            activeWorkIndex = nextIndex;
+
+            if (lightboxImage && src) {
+                lightboxImage.src = src;
+                lightboxImage.alt = alt;
+            }
+
+            if (lightboxCaption) {
+                lightboxCaption.textContent = title;
+            }
+        }
+
+        function openLightbox(index, trigger) {
+            lastLightboxTrigger = trigger || lastLightboxTrigger;
+            setLightboxImage(index);
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            body.classList.add('lightbox-open');
+
+            var closeButton = lightbox.querySelector('[data-lightbox-close]');
+            if (closeButton && typeof closeButton.focus === 'function') {
+                closeButton.focus({ preventScroll: true });
+            }
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            body.classList.remove('lightbox-open');
+
+            if (lastLightboxTrigger && typeof lastLightboxTrigger.focus === 'function') {
+                lastLightboxTrigger.focus({ preventScroll: true });
+            }
+
+            lastLightboxTrigger = null;
+        }
+
+        workCards.forEach(function (card, index) {
+            card.addEventListener('click', function () {
+                openLightbox(index, card);
+            });
+        });
+
+        closeButtons.forEach(function (button) {
+            button.addEventListener('click', closeLightbox);
+        });
+
+        if (prevButton) {
+            prevButton.addEventListener('click', function () {
+                setLightboxImage(activeWorkIndex - 1);
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', function () {
+                setLightboxImage(activeWorkIndex + 1);
+            });
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (!lightbox.classList.contains('is-open')) {
+                return;
+            }
+
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                setLightboxImage(activeWorkIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                setLightboxImage(activeWorkIndex + 1);
+            }
+        });
     }
 
     var phoneInput = document.querySelector('input[name="phone"]');

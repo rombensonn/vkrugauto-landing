@@ -9,20 +9,71 @@ $mapEmbedUrl = 'https://yandex.ru/map-widget/v1/?ll=37.881443%2C55.744971&z=17&p
 $year = date('Y');
 
 $services = [
-    ['title' => 'Оклейка такси под ГОСТ', 'text' => 'Белый, желтый, брендирование под Яндекс, ГОСТ Турция и ГОСТ Германия для подготовки автомобиля к работе.', 'icon' => 'taxi'],
-    ['title' => 'Антигравийная пленка', 'text' => 'Защита зон риска: бампер, фары, капот, зеркала, пороги и другие уязвимые участки кузова.', 'icon' => 'shield'],
-    ['title' => 'Автовинил', 'text' => 'Частичная или полная оклейка для обновления внешнего вида автомобиля без лишнего визуального шума.', 'icon' => 'wrap'],
-    ['title' => 'Тонировка', 'text' => 'Задняя полусфера, лобовое стекло и пленка хамелеон после консультации и с учетом допустимых требований.', 'icon' => 'glass'],
-    ['title' => 'Оклейка фар пленкой', 'text' => 'Темная бронь, защита поверхности и аккуратное визуальное обновление оптики.', 'icon' => 'light'],
-    ['title' => 'Срочные работы', 'text' => 'При наличии свободного окна можем принять срочно и выполнить задачу в день обращения.', 'icon' => 'clock'],
+    ['title' => 'Бронепленка и зоны риска', 'text' => 'Полиуретановая защита фар, капота, бампера, зеркал, порогов и погрузочных зон от сколов и притертостей.', 'icon' => 'shield'],
+    ['title' => 'Тонировка стекол', 'text' => 'Задняя полусфера, передние стекла, полоса на лобовое и консультация по допустимым требованиям перед работой.', 'icon' => 'glass'],
+    ['title' => 'Затемнение и бронь фар', 'text' => 'Защитная или тонировочная пленка для оптики: визуальное затемнение, броня поверхности и аккуратная кромка.', 'icon' => 'light'],
+    ['title' => 'Полировка кузова', 'text' => 'Локальная, экспресс, восстановительная и абразивная полировка после осмотра ЛКП и подбора безопасного сценария.', 'icon' => 'polish'],
+    ['title' => 'Шумоизоляция салона', 'text' => 'Двери, потолок, арки, багажник или комплексная шумоизоляция с подбором материалов под задачу и бюджет.', 'icon' => 'sound'],
+    ['title' => 'Перетяжка потолков', 'text' => 'Обновление потолка, стоек и козырьков тканью, экокожей или алькантарой после консультации по материалу.', 'icon' => 'roof'],
 ];
 
-$prices = [
-    ['name' => 'Полная оклейка в белый + ГОСТ', 'price' => '18 900 ₽'],
-    ['name' => 'Желтый', 'price' => '18 900 ₽'],
-    ['name' => 'Яндекс БРЕНД', 'price' => '3 900 ₽'],
-    ['name' => 'ГОСТ Турция', 'price' => '4 900 ₽'],
-    ['name' => 'ГОСТ Германия', 'price' => '8 900 ₽'],
+$priceGroups = [
+    [
+        'title' => 'Бронепленка',
+        'note' => 'Полиуретановая пленка, зоны риска и локальная защита.',
+        'items' => [
+            ['name' => 'Фары или ПТФ', 'price' => 'от 6 500 ₽'],
+            ['name' => 'Капот / крупная деталь', 'price' => 'от 20 000 ₽'],
+            ['name' => 'Передний комплекс зон риска', 'price' => 'от 35 000 ₽'],
+            ['name' => 'Полный кузов', 'price' => 'от 180 000 ₽'],
+        ],
+    ],
+    [
+        'title' => 'Тонировка',
+        'note' => 'Зоны стекол и пленка подбираются после консультации.',
+        'items' => [
+            ['name' => 'Передние стекла', 'price' => 'от 1 500 ₽'],
+            ['name' => 'Задняя полусфера', 'price' => 'от 5 000 ₽'],
+            ['name' => 'Лобовое / полоса', 'price' => 'от 2 000 ₽'],
+        ],
+    ],
+    [
+        'title' => 'Фары',
+        'note' => 'Защита, затемнение и визуальное обновление оптики.',
+        'items' => [
+            ['name' => 'Бронирование фар', 'price' => 'от 6 500 ₽'],
+            ['name' => 'Затемнение фар пленкой', 'price' => 'от 4 900 ₽'],
+            ['name' => 'Полировка фар', 'price' => 'от 1 000 ₽'],
+        ],
+    ],
+    [
+        'title' => 'Полировка',
+        'note' => 'Финальный сценарий зависит от состояния лака.',
+        'items' => [
+            ['name' => 'Локальная деталь', 'price' => 'от 2 500 ₽'],
+            ['name' => 'Экспресс-полировка кузова', 'price' => 'от 5 000 ₽'],
+            ['name' => 'Восстановительная полировка', 'price' => 'от 9 000 ₽'],
+            ['name' => 'Абразивная полировка', 'price' => 'от 12 000 ₽'],
+        ],
+    ],
+    [
+        'title' => 'Шумоизоляция',
+        'note' => 'Частичные зоны или комплекс по классу автомобиля.',
+        'items' => [
+            ['name' => 'Двери', 'price' => 'от 4 900 ₽'],
+            ['name' => 'Потолок', 'price' => 'от 5 900 ₽'],
+            ['name' => 'Комплекс салона', 'price' => 'от 24 000 ₽'],
+        ],
+    ],
+    [
+        'title' => 'Потолки',
+        'note' => 'Демонтаж, материал и сложность формы влияют на срок.',
+        'items' => [
+            ['name' => 'Перетяжка потолка тканью', 'price' => 'от 10 000 ₽'],
+            ['name' => 'Потолок + стойки / козырьки', 'price' => 'от 18 000 ₽'],
+            ['name' => 'Алькантара / сложный материал', 'price' => 'по оценке'],
+        ],
+    ],
 ];
 
 $reviews = [
@@ -34,13 +85,65 @@ $reviews = [
     'Можно подождать на месте: есть Wi-Fi, чай, кофе, приставка и комфортная зона ожидания.',
 ];
 
+$works = [
+    [
+        'file' => 'work-01.jpg',
+        'title' => 'Шумоизоляция потолка',
+        'text' => 'Проклейка потолочной зоны перед сборкой салона.',
+        'alt' => 'Красный материал шумоизоляции на потолке автомобиля в процессе работы',
+        'width' => 1350,
+        'height' => 1800,
+    ],
+    [
+        'file' => 'work-02.jpg',
+        'title' => 'Черный потолок салона',
+        'text' => 'Темная фактура потолка после аккуратной работы с интерьером.',
+        'alt' => 'Черный потолок автомобиля в салоне после работы с интерьером',
+        'width' => 1350,
+        'height' => 1800,
+    ],
+    [
+        'file' => 'work-03.jpg',
+        'title' => 'Звездная подсветка',
+        'text' => 'Интерьер с декоративной потолочной подсветкой.',
+        'alt' => 'Автомобильный салон со звездной потолочной подсветкой',
+        'width' => 1350,
+        'height' => 1800,
+    ],
+    [
+        'file' => 'work-04.jpg',
+        'title' => 'Детали потолка и стоек',
+        'text' => 'Подготовленные элементы интерьера перед установкой.',
+        'alt' => 'Черные элементы потолка и стоек автомобиля перед установкой',
+        'width' => 1350,
+        'height' => 1800,
+    ],
+    [
+        'file' => 'work-05.jpg',
+        'title' => 'Панорамный потолок',
+        'text' => 'Салон с панорамной зоной и аккуратной световой графикой.',
+        'alt' => 'Салон автомобиля с панорамным потолком и световой графикой',
+        'width' => 806,
+        'height' => 1800,
+    ],
+    [
+        'file' => 'work-06.jpg',
+        'title' => 'Потолочная панель',
+        'text' => 'Черная потолочная панель со звездной подсветкой.',
+        'alt' => 'Черная потолочная панель автомобиля со звездной подсветкой',
+        'width' => 1350,
+        'height' => 1800,
+    ],
+];
+
 $faq = [
+    ['q' => 'Можно ли рассчитать стоимость по телефону?', 'a' => 'Да, для предварительной оценки нужно указать автомобиль, услугу, зоны работ и желаемый материал. Точную стоимость мастер согласует после фото или осмотра.'],
+    ['q' => 'Сколько занимает бронепленка или тонировка?', 'a' => 'Небольшие зоны могут занимать меньше времени, комплексная защита или перетяжка потолка требуют больше подготовки. Срок зависит от объема, материала и необходимости демонтажа.'],
+    ['q' => 'Передние стекла и лобовое можно тонировать?', 'a' => 'Такие работы обсуждаются отдельно и выполняются только после консультации по допустимым требованиям. Мастер подскажет безопасный вариант под вашу задачу.'],
     ['q' => 'Можно ли приехать без записи?', 'a' => 'Лучше записаться заранее, но при наличии свободного окна мастера могут принять срочно. Перед приездом стоит позвонить или написать.'],
-    ['q' => 'Сколько занимает оклейка?', 'a' => 'Срок зависит от объема: небольшие зоны могут выполняться быстрее, полная оклейка требует больше времени. Точный срок скажет мастер после уточнения задачи.'],
-    ['q' => 'Можно ли рассчитать стоимость по телефону?', 'a' => 'Да, для предварительной оценки нужно указать автомобиль, услугу и желаемый материал. Итоговая стоимость согласуется до начала работ.'],
-    ['q' => 'Есть ли гарантия?', 'a' => 'В отзывах клиенты отмечают гарантию на работы и материал. Конкретные условия лучше уточнить у мастера при записи.'],
+    ['q' => 'Есть ли гарантия?', 'a' => 'В отзывах клиенты отмечают гарантию на работы и материал. Конкретные условия зависят от услуги и материала, их лучше уточнить у мастера при записи.'],
     ['q' => 'Можно ли оплатить картой?', 'a' => 'Да, доступны карта, наличные, QR-код и банковский перевод.'],
-    ['q' => 'Делаете оклейку такси под ГОСТ и Яндекс?', 'a' => 'Да, в карточке указаны услуги по оклейке такси, ГОСТ и Яндекс БРЕНД.'],
+    ['q' => 'Делаете шумоизоляцию и перетяжку потолка?', 'a' => 'Да, можно обсудить шумоизоляцию дверей, потолка, арок, багажника, а также перетяжку потолка и отдельных элементов салона.'],
 ];
 
 $schema = [
@@ -50,9 +153,9 @@ $schema = [
     'additionalType' => 'https://schema.org/AutomotiveBusiness',
     'name' => 'Вкругавто',
     'url' => $canonicalUrl,
-    'image' => $siteUrl . '/assets/img/yandex-taxi-hero.jpg',
+    'image' => $siteUrl . '/assets/img/works/work-05.jpg',
     'telephone' => '+79855560320',
-    'description' => 'Оклейка авто, такси под ГОСТ, Яндекс БРЕНД, антигравийная пленка, автовинил и тонировка в Москве.',
+    'description' => 'Бронепленка, тонировка, затемнение фар, полировка, шумоизоляция и перетяжка потолков в Москве.',
     'address' => [
         '@type' => 'PostalAddress',
         'addressLocality' => 'Москва',
@@ -71,11 +174,12 @@ $schema = [
     'areaServed' => 'Москва',
     'hasOfferCatalog' => [
         '@type' => 'OfferCatalog',
-        'name' => 'Услуги по оклейке автомобилей',
+        'name' => 'Детейлинг, защита и интерьерные работы',
         'itemListElement' => [
-            ['@type' => 'Offer', 'name' => 'Полная оклейка в белый + ГОСТ', 'price' => '18900', 'priceCurrency' => 'RUB'],
-            ['@type' => 'Offer', 'name' => 'Яндекс БРЕНД', 'price' => '3900', 'priceCurrency' => 'RUB'],
-            ['@type' => 'Offer', 'name' => 'ГОСТ Турция', 'price' => '4900', 'priceCurrency' => 'RUB'],
+            ['@type' => 'Offer', 'name' => 'Бронирование фар пленкой', 'price' => '6500', 'priceCurrency' => 'RUB'],
+            ['@type' => 'Offer', 'name' => 'Тонировка задней полусферы', 'price' => '5000', 'priceCurrency' => 'RUB'],
+            ['@type' => 'Offer', 'name' => 'Восстановительная полировка кузова', 'price' => '9000', 'priceCurrency' => 'RUB'],
+            ['@type' => 'Offer', 'name' => 'Шумоизоляция потолка', 'price' => '5900', 'priceCurrency' => 'RUB'],
         ],
     ],
 ];
@@ -85,16 +189,16 @@ $schema = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Вкругавто — оклейка авто, антигравийная плёнка и брендирование такси в Москве</title>
-    <meta name="description" content="Оклейка авто, такси под ГОСТ, Яндекс БРЕНД, антигравийная плёнка, автовинил и тонировка в Москве. Вкругавто: рейтинг 4,7, предварительная запись, оплата картой, Салтыковская ул., 51.">
+    <title>Вкругавто — бронепленка, тонировка, полировка и шумоизоляция авто в Москве</title>
+    <meta name="description" content="Бронепленка, тонировка, затемнение фар, полировка кузова, шумоизоляция и перетяжка потолков в Москве. Вкругавто: рейтинг 4,7, запись, оплата картой, Салтыковская ул., 51.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:title" content="Вкругавто — оклейка авто и брендирование такси в Москве">
-    <meta property="og:description" content="Оклейка такси под ГОСТ, Яндекс БРЕНД, антигравийная пленка, автовинил и тонировка. Рейтинг 4,7 на Яндекс Картах.">
+    <meta property="og:title" content="Вкругавто — бронепленка, тонировка и детейлинг авто в Москве">
+    <meta property="og:description" content="Бронепленка, тонировка, затемнение фар, полировка, шумоизоляция и перетяжка потолков. Рейтинг 4,7 на Яндекс Картах.">
     <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:image" content="<?= htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/assets/img/yandex-taxi-hero.jpg">
+    <meta property="og:image" content="<?= htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/assets/img/works/work-05.jpg">
     <meta name="theme-color" content="#0f172a">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/assets/css/style.css" as="style">
@@ -116,12 +220,13 @@ $schema = [
                 </span>
                 <span>
                     <strong>Вкругавто</strong>
-                    <small>оклейка и защита авто</small>
+                    <small>броня, тон, интерьер</small>
                 </span>
             </a>
 
             <nav class="desktop-nav" aria-label="Основная навигация">
                 <a href="#services">Услуги</a>
+                <a href="#works">Работы</a>
                 <a href="#prices">Цены</a>
                 <a href="#process">Процесс</a>
                 <a href="#reviews">Отзывы</a>
@@ -139,6 +244,7 @@ $schema = [
 
         <nav class="mobile-nav" aria-label="Мобильная навигация" data-mobile-nav>
             <a href="#services">Услуги</a>
+            <a href="#works">Работы</a>
             <a href="#prices">Цены</a>
             <a href="#lead">Заявка</a>
             <a href="#contacts">Контакты</a>
@@ -151,12 +257,12 @@ $schema = [
             <div class="container hero-inner">
                 <div class="hero-copy reveal">
                     <p class="eyebrow">Москва, Салтыковская ул., 51, этаж 4</p>
-                    <h1>Оклейка авто, такси под ГОСТ и антигравийная защита в Москве</h1>
-                    <p class="hero-text">Вкругавто — оклейка плёнкой, автовинил, тонировка и брендирование такси. Работаем по записи, согласуем стоимость до начала работ и аккуратно сдаём результат без пыли, заломов и лишних накруток.</p>
+                    <h1>Бронепленка, тонировка, полировка и шумоизоляция авто в Москве</h1>
+                    <p class="hero-text">Вкругавто — защитная бронепленка, тонировка, затемнение фар, полировка кузова, шумоизоляция и перетяжка потолков. Работаем по записи, согласуем стоимость до начала работ и подбираем материал под задачу, а не “по шаблону”.</p>
 
                     <div class="hero-actions" aria-label="Основные действия">
                         <a class="btn btn-primary" href="#lead">Рассчитать стоимость</a>
-                        <a class="btn btn-secondary" href="#lead">Записаться</a>
+                        <a class="btn btn-secondary" href="#works">Смотреть работы</a>
                         <a class="btn btn-ghost" href="<?= $phoneHref; ?>">Позвонить</a>
                     </div>
 
@@ -168,35 +274,35 @@ $schema = [
                     </div>
                 </div>
 
-                <aside class="hero-stage reveal" aria-label="Визуальный блок студии Вкругавто">
+                <aside class="hero-stage reveal" aria-label="Визуальный блок работ Вкругавто">
                     <div class="stage-frame">
-                        <img class="hero-art" src="/assets/img/yandex-taxi-hero.jpg" width="1672" height="941" alt="Киношная фотография такси с желтой графикой в чистой студии оклейки" fetchpriority="high">
+                        <img class="hero-art" src="/assets/img/works/work-05.jpg" width="806" height="1800" alt="Салон автомобиля с панорамным потолком и световой графикой после интерьерной работы" fetchpriority="high">
                         <div class="stage-badge stage-badge-rating">
-                            <span>Яндекс</span>
-                            <strong>4,7</strong>
+                            <span>фокус</span>
+                            <strong>PPF</strong>
                         </div>
                         <div class="stage-badge stage-badge-time">
-                            <span>окно</span>
-                            <strong>до 23:00</strong>
+                            <span>интерьер</span>
+                            <strong>потолки</strong>
                         </div>
                     </div>
 
                     <div class="hero-proof">
                         <div class="proof-line">
-                            <span>Оплата</span>
-                            <strong>карта, наличные, QR, перевод</strong>
+                            <span>Защита</span>
+                            <strong>бронепленка, зоны риска, фары</strong>
                         </div>
                         <div class="proof-line">
-                            <span>Фокус</span>
-                            <strong>такси, антигравийная пленка, автовинил</strong>
+                            <span>Внешний вид</span>
+                            <strong>тонировка, затемнение фар, полировка</strong>
                         </div>
                         <div class="proof-line">
-                            <span>Запись</span>
-                            <strong>заранее или свободное окно на сегодня</strong>
+                            <span>Комфорт</span>
+                            <strong>шумоизоляция и перетяжка потолков</strong>
                         </div>
                         <div class="proof-line">
-                            <span>Дополнительно</span>
-                            <strong>подарочный сертификат, акции и спецпредложения уточняйте при записи</strong>
+                            <span>Расчет</span>
+                            <strong>цена и срок согласуются до начала работ</strong>
                         </div>
                     </div>
                     <a class="map-mini" href="<?= htmlspecialchars($mapsUrl, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener">Открыть карточку на Яндекс Картах</a>
@@ -208,13 +314,13 @@ $schema = [
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">Что можно сделать</p>
-                    <h2>Услуги Вкругавто без лишней сервисной мишуры</h2>
-                    <p>Задачи клиентов: оклейка авто Москва, брендирование такси Москва, антигравийная пленка Москва и точечная защита кузова — в одном месте и с понятным согласованием до старта.</p>
+                    <h2>Защита кузова, стекла, оптика и интерьер в одном сценарии</h2>
+                    <p>Основные направления: бронепленка Москва, тонировка авто Москва, затемнение фар пленкой, полировка кузова, шумоизоляция авто и перетяжка потолка автомобиля.</p>
                 </div>
 
                 <div class="studio-note reveal">
                     <span>Студийный подход</span>
-                    <p>Сначала задача и материал, потом аккуратная работа с краями, стыками и чистотой поверхности. Без обещаний “магии”, только понятный процесс.</p>
+                    <p>Сначала осмотр, материал и зона работ, потом аккуратная подготовка поверхности, демонтаж при необходимости и приемка результата. Без обещаний “самого дешевого”, зато с понятной логикой цены.</p>
                 </div>
 
                 <div class="service-grid">
@@ -230,21 +336,66 @@ $schema = [
             </div>
         </section>
 
+        <section class="section works-section" id="works">
+            <div class="container works-layout">
+                <div class="section-head works-head reveal">
+                    <p class="eyebrow">Примеры работ</p>
+                    <h2>Реальные фотографии деталей и интерьера</h2>
+                    <p>Добавили только предоставленные фотографии: шумоизоляция, элементы потолка, черная отделка и декоративная потолочная подсветка. Фото можно открыть крупнее и рассмотреть детали.</p>
+                </div>
+
+                <div class="works-grid" aria-label="Галерея примеров работ">
+                    <?php foreach ($works as $index => $work): ?>
+                        <?php $imagePath = '/assets/img/works/' . $work['file']; ?>
+                        <button
+                            class="work-card reveal"
+                            type="button"
+                            data-lightbox-index="<?= $index; ?>"
+                            data-lightbox-src="<?= htmlspecialchars($imagePath, ENT_QUOTES, 'UTF-8'); ?>"
+                            data-lightbox-title="<?= htmlspecialchars($work['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                            data-lightbox-alt="<?= htmlspecialchars($work['alt'], ENT_QUOTES, 'UTF-8'); ?>">
+                            <img
+                                src="<?= htmlspecialchars($imagePath, ENT_QUOTES, 'UTF-8'); ?>"
+                                width="<?= (int) $work['width']; ?>"
+                                height="<?= (int) $work['height']; ?>"
+                                alt="<?= htmlspecialchars($work['alt'], ENT_QUOTES, 'UTF-8'); ?>"
+                                loading="lazy">
+                            <span class="work-card-meta">
+                                <strong><?= htmlspecialchars($work['title'], ENT_QUOTES, 'UTF-8'); ?></strong>
+                                <small><?= htmlspecialchars($work['text'], ENT_QUOTES, 'UTF-8'); ?></small>
+                            </span>
+                            <span class="work-card-action" aria-hidden="true">Открыть крупнее</span>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
         <section class="section price-section" id="prices">
             <div class="container price-layout">
                 <div class="section-head reveal">
                     <p class="eyebrow">Пакеты и цены</p>
-                    <h2>Понятные цены на популярные услуги</h2>
-                    <p>Итоговая стоимость зависит от задачи, состояния автомобиля и выбранного материала. Перед началом работ мастер согласует объём, цену и сроки.</p>
+                    <h2>Стартовые цены по новым направлениям</h2>
+                    <p>Это ориентиры по рынку и типовым сегментам. Итог зависит от класса автомобиля, состояния поверхности, выбранной пленки или материала, демонтажа и объема работ.</p>
                     <a class="btn btn-primary" href="#lead">Уточнить стоимость под мой автомобиль</a>
                 </div>
 
-                <div class="price-list reveal" aria-label="Ориентировочные цены">
-                    <?php foreach ($prices as $item): ?>
-                        <div class="price-item">
-                            <span><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></span>
-                            <strong><?= htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8'); ?></strong>
-                        </div>
+                <div class="price-board reveal" aria-label="Ориентировочные цены по услугам">
+                    <?php foreach ($priceGroups as $group): ?>
+                        <article class="price-pack">
+                            <div class="price-pack-head">
+                                <h3><?= htmlspecialchars($group['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                                <p><?= htmlspecialchars($group['note'], ENT_QUOTES, 'UTF-8'); ?></p>
+                            </div>
+                            <ul>
+                                <?php foreach ($group['items'] as $item): ?>
+                                    <li>
+                                        <span><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                        <strong><?= htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8'); ?></strong>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </article>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -254,14 +405,14 @@ $schema = [
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">Почему выбирают</p>
-                    <h2>Аккуратность, скорость и цена без сюрпризов</h2>
+                    <h2>Не просто наклеить пленку, а подобрать правильный объем</h2>
                 </div>
                 <div class="benefit-grid">
-                    <article class="benefit-card reveal"><span>скорость</span><h3>Быстро принимают в работу</h3><p>Клиенты отмечают, что мастера могут принять без очереди и выполнить срочные задачи при наличии окна.</p></article>
-                    <article class="benefit-card reveal"><span>чистота</span><h3>Аккуратная оклейка</h3><p>В отзывах часто хвалят качество пленки: без пыли, заломов и видимых дефектов.</p></article>
-                    <article class="benefit-card reveal"><span>цена</span><h3>Без лишних накруток</h3><p>Стоимость обсуждается заранее, клиенты отмечают адекватные цены.</p></article>
-                    <article class="benefit-card reveal"><span>контроль</span><h3>Гарантия и контроль</h3><p>Клиенты упоминают гарантию на работы и материал; в отзывах встречается и контрольный осмотр после выполнения.</p></article>
-                    <article class="benefit-card reveal"><span>ожидание</span><h3>Комфортное ожидание</h3><p>Есть Wi-Fi, чай, кофе, приставка и место, где можно провести время, пока автомобиль в работе.</p></article>
+                    <article class="benefit-card reveal"><span>диагностика</span><h3>Сначала осмотр и задача</h3><p>Для бронепленки, полировки и интерьера важно понять состояние поверхности, материал и реальный объем демонтажа.</p></article>
+                    <article class="benefit-card reveal"><span>аккуратность</span><h3>Работа с кромками и чистотой</h3><p>Клиенты отмечают аккуратную оклейку без пыли, заломов и видимых дефектов на пленке.</p></article>
+                    <article class="benefit-card reveal"><span>цена</span><h3>Стоимость до старта</h3><p>Цену, сроки и материалы согласуют заранее: без внезапной допродажи в момент выдачи автомобиля.</p></article>
+                    <article class="benefit-card reveal"><span>материал</span><h3>Подбор под сценарий</h3><p>Для фар, стекол, кузова, потолка и шумоизоляции используются разные материалы — мастер объясняет разницу до работы.</p></article>
+                    <article class="benefit-card reveal"><span>комфорт</span><h3>Можно подождать на месте</h3><p>Есть Wi-Fi, чай, кофе, приставка и место, где можно провести время, пока автомобиль в работе.</p></article>
                 </div>
             </div>
         </section>
@@ -270,14 +421,14 @@ $schema = [
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">Как проходит работа</p>
-                    <h2>Пять шагов от заявки до приемки результата</h2>
+                    <h2>Пять шагов без лишней неопределенности</h2>
                 </div>
                 <ol class="process-list">
-                    <li class="reveal"><span>01</span><h3>Заявка или звонок</h3><p>Вы оставляете номер, выбираете услугу и удобное время.</p></li>
-                    <li class="reveal"><span>02</span><h3>Быстрая консультация</h3><p>Мастер уточняет автомобиль, задачу, материал и желаемый срок.</p></li>
-                    <li class="reveal"><span>03</span><h3>Согласование цены</h3><p>До начала работ понятны примерная стоимость и объем.</p></li>
-                    <li class="reveal"><span>04</span><h3>Оклейка или тонировка</h3><p>Работа выполняется в чистом освещенном помещении.</p></li>
-                    <li class="reveal"><span>05</span><h3>Приемка результата</h3><p>Вы проверяете внешний вид, края, стыки и качество выполнения.</p></li>
+                    <li class="reveal"><span>01</span><h3>Заявка или звонок</h3><p>Вы выбираете услугу: бронепленка, тонировка, фары, полировка, шумоизоляция или потолок.</p></li>
+                    <li class="reveal"><span>02</span><h3>Фото или осмотр</h3><p>Мастер уточняет модель, состояние, зоны работ, желаемый материал и срочность.</p></li>
+                    <li class="reveal"><span>03</span><h3>Расчет объема</h3><p>До начала работ согласуются ориентир по цене, сроку и список деталей.</p></li>
+                    <li class="reveal"><span>04</span><h3>Подготовка и работа</h3><p>Поверхность очищается, при необходимости выполняется демонтаж, затем идет монтаж пленки, полировка или интерьерная работа.</p></li>
+                    <li class="reveal"><span>05</span><h3>Приемка результата</h3><p>Вы проверяете внешний вид, края, стыки, свет, салон и качество выполнения.</p></li>
                 </ol>
             </div>
         </section>
@@ -286,18 +437,18 @@ $schema = [
             <div class="container segment-grid">
                 <article class="segment-card reveal">
                     <span class="segment-number">01</span>
-                    <h2>Владельцам такси</h2>
-                    <p>Подготовка автомобиля под требования агрегатора, оклейка такси под ГОСТ и Яндекс БРЕНД оклейка.</p>
+                    <h2>Новые и свежие авто</h2>
+                    <p>Бронепленка на зоны риска, фары, капот, бампер, пороги и погрузочные зоны, чтобы сохранить внешний вид с первых месяцев.</p>
                 </article>
                 <article class="segment-card reveal">
                     <span class="segment-number">02</span>
-                    <h2>Владельцам новых авто</h2>
-                    <p>Основной запрос: оклейка зон риска сразу после покупки — капот, бампер, фары, зеркала и другие уязвимые места.</p>
+                    <h2>Тем, кто хочет обновить вид</h2>
+                    <p>Тонировка авто, затемнение фар, полировка кузова и аккуратное восстановление блеска без агрессивных обещаний.</p>
                 </article>
                 <article class="segment-card reveal">
                     <span class="segment-number">03</span>
-                    <h2>Для обновления внешнего вида</h2>
-                    <p>Услуги: автовинил Москва, тонировка авто Москва, оклейка фар пленкой, частичная или полная оклейка.</p>
+                    <h2>Для комфорта в салоне</h2>
+                    <p>Шумоизоляция дверей, потолка, арок, багажника и перетяжка потолка для более тихого и собранного интерьера.</p>
                 </article>
             </div>
         </section>
@@ -307,7 +458,7 @@ $schema = [
                 <div class="section-head reveal">
                     <p class="eyebrow">Отзывы</p>
                     <h2>Что клиенты отмечают на Яндекс Картах</h2>
-                    <p>Короткие смысловые выжимки без длинных цитат: рейтинг 4,7, 25 оценок и 18 отзывов.</p>
+                    <p>Короткие смысловые выжимки без длинных цитат: рейтинг 4,7, 25 оценок и 18 отзывов. Главные мотивы — аккуратность, скорость, отношение и понятная цена.</p>
                 </div>
                 <div class="review-grid">
                     <?php foreach ($reviews as $review): ?>
@@ -345,12 +496,12 @@ $schema = [
             <div class="container lead-layout">
                 <div class="lead-copy reveal">
                     <p class="eyebrow">Заявка</p>
-                    <h2>Рассчитать стоимость оклейки под ваш автомобиль</h2>
-                    <p>Оставьте заявку — мастер уточнит задачу, сориентирует по цене и подберет свободное время. Подходит для такси, новых автомобилей и частичной защиты кузова.</p>
+                    <h2>Рассчитать стоимость под ваш автомобиль</h2>
+                    <p>Оставьте заявку — мастер уточнит задачу, материал, зоны работ и сориентирует по цене. Подходит для защиты кузова, тонировки, фар, полировки и интерьерных задач.</p>
                     <ul class="check-list">
                         <li>Согласуем стоимость до начала работ</li>
                         <li>Подберем услугу под задачу и автомобиль</li>
-                        <li>Можно уточнить свободное окно на сегодня</li>
+                        <li>Можно отправить фото для предварительной оценки</li>
                     </ul>
                 </div>
 
@@ -370,12 +521,12 @@ $schema = [
                     <label>Какая услуга нужна <span>*</span>
                         <select name="service" required>
                             <option value="">Выберите услугу</option>
-                            <option>оклейка такси под ГОСТ</option>
-                            <option>Яндекс БРЕНД</option>
-                            <option>антигравийная пленка</option>
-                            <option>автовинил</option>
-                            <option>тонировка</option>
-                            <option>оклейка фар</option>
+                            <option>бронепленка / зоны риска</option>
+                            <option>тонировка стекол</option>
+                            <option>затемнение или бронь фар</option>
+                            <option>полировка кузова</option>
+                            <option>шумоизоляция</option>
+                            <option>перетяжка потолка</option>
                             <option>другое</option>
                         </select>
                     </label>
@@ -440,6 +591,25 @@ $schema = [
         </div>
     </footer>
 
+    <div class="lightbox" data-lightbox aria-hidden="true" role="dialog" aria-modal="true" aria-label="Увеличенный просмотр фотографии">
+        <button class="lightbox-backdrop" type="button" data-lightbox-close aria-label="Закрыть просмотр"></button>
+        <div class="lightbox-panel" role="document">
+            <button class="lightbox-close" type="button" data-lightbox-close aria-label="Закрыть просмотр">
+                <span aria-hidden="true"></span>
+            </button>
+            <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Предыдущее фото">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <figure>
+                <img src="" alt="" data-lightbox-image>
+                <figcaption data-lightbox-caption></figcaption>
+            </figure>
+            <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Следующее фото">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </div>
+
     <div class="mobile-cta" aria-label="Быстрые действия">
         <a href="<?= $phoneHref; ?>">Позвонить</a>
         <a href="#lead">Заявка</a>
@@ -457,6 +627,9 @@ function getIcon(string $name): string
         'wrap' => '<svg viewBox="0 0 24 24"><path d="M4 17c5-8 11-10 16-9"/><path d="M5 20c4-5 9-7 15-6"/><path d="M4 13h4M16 8h4"/></svg>',
         'glass' => '<svg viewBox="0 0 24 24"><path d="M4 6h16l-2 12H6L4 6Z"/><path d="M7 9h10M8 13h8"/></svg>',
         'light' => '<svg viewBox="0 0 24 24"><path d="M4 12c3-5 8-6 16-5v10c-8 1-13 0-16-5Z"/><path d="M16 9v6M20 10h2M20 14h2"/></svg>',
+        'polish' => '<svg viewBox="0 0 24 24"><path d="M7 16c3 3 7 3 10 0"/><path d="M8 6h8l2 5H6L8 6Z"/><path d="M4 20c4-2 12-2 16 0"/><path d="M12 3v2"/></svg>',
+        'sound' => '<svg viewBox="0 0 24 24"><path d="M5 10v4h4l5 4V6l-5 4H5Z"/><path d="M17 9c1 1 1 5 0 6"/><path d="M20 7c2 3 2 7 0 10"/></svg>',
+        'roof' => '<svg viewBox="0 0 24 24"><path d="M4 15c4-6 12-6 16 0"/><path d="M6 16h12"/><path d="M8 18h8"/><path d="M10 6h4l2 4H8l2-4Z"/></svg>',
         'clock' => '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg>',
     ];
 
